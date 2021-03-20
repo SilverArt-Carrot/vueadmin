@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login_container">
     login
   </div>
 </template>
@@ -10,6 +10,9 @@ name: "login"
 }
 </script>
 
-<style scoped>
-
+<style Lang="Less" scoped>
+ .login_container {
+   background-color: #2b4b6b;
+   height: 100%;
+ }
 </style>
