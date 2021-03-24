@@ -56,7 +56,7 @@ export default {
         if (!valid) return;
         const {data: res} = await this.$http.post('login', this.loginForm)
         if (res.meta.status !== 200) {
-          return this.$message.error('登录失败')
+          return this.$message.error('登录失败，验证错误')
         }else{
           this.$message.success('登录成功')
           //将服务器返回的token保持到sessionStorage中，sessionStorage是window
