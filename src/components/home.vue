@@ -46,7 +46,7 @@
 
         </el-menu>
       </el-aside>
-      <!--      右侧区域-->
+      <!--      右侧主体区域-->
       <el-main>
         <router-view></router-view>
       </el-main>
@@ -89,7 +89,6 @@ export default {
       if( res.meta.status !== 200 ) return this.$message.error(res.meta.meg)
       //将请求成功的数据赋值给menuList
       this.menuList = res.data
-      console.log(res)
     },
     toggleCollapse() {
       this.isCollapse = !this.isCollapse

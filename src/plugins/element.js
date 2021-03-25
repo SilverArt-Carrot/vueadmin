@@ -23,7 +23,11 @@ import {
   Switch,
   Tooltip,
   Pagination,
-  Dialog } from 'element-ui'
+  Dialog,
+  Tag,
+  Tree,
+  Select,
+  Option } from 'element-ui'
 
 //Login
 Vue.use(Button).use(Form).use(FormItem).use(Input)
@@ -47,6 +51,12 @@ Vue.use(Tooltip)
 Vue.use(Pagination)
 //对话框
 Vue.use(Dialog)
+//标签，用于表格内部
+Vue.use(Tag)
+//树形结构
+Vue.use(Tree)
+//下拉菜单
+Vue.use(Select).use(Option)
 //全局消息
 Vue.prototype.$message = Message
 //全局消息对话框

@@ -40,6 +40,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
     return next()
   }
+  //如果在sessionStorage中没有token则返回login页面
   if (window.sessionStorage.getItem('token')) {
     return next()
   } else {
