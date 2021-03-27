@@ -86,7 +86,7 @@
     <!--    修改角色对话框-->
     <el-dialog title="修改角色信息" :visible.sync="editRoleDialogVisible" width="50%" @close="editRoleDialogClosed">
       <!--      对话框顶部区域-->
-      <el-form :model="editRoleForm" :rules="addRoleFormRules" ref="editRoleFormRef" label-width="70px">
+      <el-form :model="editRoleForm" :rules="addRoleFormRules" ref="editRoleFormRef" label-width="100px">
         <el-form-item label="角色名" prop="roleName">
           <el-input v-model="editRoleForm.roleName"></el-input>
         </el-form-item>
@@ -209,7 +209,7 @@ export default {
     },
     //展示修改角色对话框
     async showEditRoleDialog(id) {
-      //以对应id进行查询
+      // 以对应id进行查询
       const { data: res } = await this.$http.get(`roles/${id}`)
       if (res.meta.status !== 200) {
         return this.$message.error('获取角色信息失败')

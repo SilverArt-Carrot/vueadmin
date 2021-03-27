@@ -351,6 +351,7 @@ export default {
         this.roleList = res.data
       }
       this.allotRoleDialogVisible = !this.allotRoleDialogVisible
+      console.log(this.userList)
     },
     // 分配角色
     async allotRole() {

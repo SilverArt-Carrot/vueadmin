@@ -27,7 +27,8 @@ import {
   Tag,
   Tree,
   Select,
-  Option } from 'element-ui'
+  Option,
+  Cascader } from 'element-ui'
 
 //Login
 Vue.use(Button).use(Form).use(FormItem).use(Input)
@@ -57,6 +58,8 @@ Vue.use(Tag)
 Vue.use(Tree)
 //下拉菜单
 Vue.use(Select).use(Option)
+//级联选择器
+Vue.use(Cascader)
 //全局消息
 Vue.prototype.$message = Message
 //全局消息对话框
