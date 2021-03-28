@@ -28,7 +28,10 @@ import {
   Tree,
   Select,
   Option,
-  Cascader } from 'element-ui'
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane } from 'element-ui'
 
 //Login
 Vue.use(Button).use(Form).use(FormItem).use(Input)
@@ -60,6 +63,10 @@ Vue.use(Tree)
 Vue.use(Select).use(Option)
 //级联选择器
 Vue.use(Cascader)
+//警告框
+Vue.use(Alert)
+//标签页
+Vue.use(Tabs).use(TabPane)
 //全局消息
 Vue.prototype.$message = Message
 //全局消息对话框

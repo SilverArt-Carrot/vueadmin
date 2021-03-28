@@ -64,6 +64,7 @@
         </el-form-item>
 
         <el-form-item label="父级分类：">
+          <!--        级联选择器-->
           <el-cascader
               v-model="selectedKeys"
               :options="parentCateList"
