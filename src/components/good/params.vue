@@ -201,7 +201,7 @@ export default {
       //获取所有的分类列表
       this.cateList = res.data
     },
-    //获取动态参数列表
+    //获取参数列表
     async getParamsList() {
       const {data: res} = await this.$http.get(`categories/${this.cateId}/attributes`, {
         params: { sel: this.activeName }

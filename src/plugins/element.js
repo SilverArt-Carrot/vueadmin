@@ -31,7 +31,12 @@ import {
   Cascader,
   Alert,
   Tabs,
-  TabPane } from 'element-ui'
+  TabPane,
+  Steps,
+  Step,
+  CheckboxGroup,
+  Checkbox,
+  Upload } from 'element-ui'
 
 //Login
 Vue.use(Button).use(Form).use(FormItem).use(Input)
@@ -67,6 +72,12 @@ Vue.use(Cascader)
 Vue.use(Alert)
 //标签页
 Vue.use(Tabs).use(TabPane)
+//步骤条
+Vue.use(Step).use(Steps)
+//复选框
+Vue.use(CheckboxGroup).use(Checkbox)
+//上传文件
+Vue.use(Upload)
 //全局消息
 Vue.prototype.$message = Message
 //全局消息对话框
