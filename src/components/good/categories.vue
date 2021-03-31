@@ -186,7 +186,6 @@ export default {
       //获取所有的分类列表
       this.cateList = res.data
       this.total = res.data.length
-      console.log(this.cateList)
       //初始化展示的页的列分类列表
       this.changePageCateList()
       //初始化对话框需要的一级和二级分类的数据

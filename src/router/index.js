@@ -28,7 +28,8 @@ const routes = [
       { path: "/categories", component: () => import('../components/good/categories') },
       { path: "/orders", component: () => import('../components/order/orders') },
       { path: "/reports", component: () => import('../components/report/reports') },
-      { path: '/goods/addgood', component: () => import('../components/good/add') }
+      { path: '/goods/addgood', component: () => import('../components/good/add') },
+      { path: '/goods/editgood', component: () => import('../components/good/edit') }
     ]
   }
 ]

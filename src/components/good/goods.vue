@@ -33,7 +33,7 @@
         <el-table-column label="操作">
           <template v-slot:default="props">
             <!--            编辑按钮-->
-            <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
+            <el-button type="primary" icon="el-icon-edit" size="mini" @click="goEditPage(props.row.goods_id)"></el-button>
             <!--            删除按钮-->
             <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeGoodById(props.row.goods_id)"></el-button>
           </template>
@@ -77,8 +77,7 @@ export default {
   methods: {
     async getGoodList() {
       const {data: res} = await this.$http.get('goods', {params: this.queryInfo})
-      if (res.meta.status !== 200) return this.$message.error('获取用户列表失败')
-      console.log(res.data)
+      if (res.meta.status !== 200) return this.$message.error('获取商品列表失败')
       this.goodList = res.data.goods
       this.total = res.data.total
     },
@@ -109,6 +108,9 @@ export default {
     },
     goAddPage() {
       this.$router.push('/goods/addgood')
+    },
+    goEditPage(id) {
+      this.$router.push(`goods/editgood?id=${id}`)
     }
   },
   filters: {
