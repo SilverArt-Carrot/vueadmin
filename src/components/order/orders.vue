@@ -76,7 +76,7 @@
       </span>
     </el-dialog>
     <!--    展示物流进度对话框-->
-    <el-dialog title="查看物流进度" :visible.sync="progressDialogVisible" width="60%" @close="progressDialogClosed">
+    <el-dialog title="查看物流进度" :visible.sync="progressDialogVisible" width="60%">
       <!--      时间线区域-->
       <el-timeline>
         <el-timeline-item
@@ -136,14 +136,12 @@ export default {
       if (res.meta.status !== 200) return this.$message.error('获取订单列表失败')
       this.orderList = res.data.goods
       this.total = res.data.total
-      console.log(this.orderList)
     },
     //此接口已经不可使用了
     async getProgressList() {
       const {data: res} = await this.$http.get('/kuaidi/804909574412544580')
       if (res.meta.status !== 200) return this.$message.error('获取物流进度列表失败')
       this.progressList = res.data
-      console.log(this.progressList)
     },
     handleSizeChange(pageSize) {
       this.queryInfo.pagesize = pageSize
@@ -159,7 +157,7 @@ export default {
     },
     editAddrDialogClosed() {
       this.editAddrForm.address = []
-      this.$refs['editAddrFormRules'].resetFields()
+      this.$refs['editAddrDialogRef'].resetFields()
     },
     editAddr() {
       this.editAddrDialogVisible = false
