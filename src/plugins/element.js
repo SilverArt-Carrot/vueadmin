@@ -36,7 +36,9 @@ import {
   Step,
   CheckboxGroup,
   Checkbox,
-  Upload } from 'element-ui'
+  Upload,
+  Timeline,
+  TimelineItem } from 'element-ui'
 
 //Login
 Vue.use(Button).use(Form).use(FormItem).use(Input)
@@ -78,6 +80,8 @@ Vue.use(Step).use(Steps)
 Vue.use(CheckboxGroup).use(Checkbox)
 //上传文件
 Vue.use(Upload)
+//时间线
+Vue.use(Timeline).use(TimelineItem)
 //全局消息
 Vue.prototype.$message = Message
 //全局消息对话框
