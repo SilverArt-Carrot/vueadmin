@@ -149,7 +149,6 @@ export default {
       const {data: res} = await this.$http.get(`goods/${this.$route.query.id}`)
       if (res.meta.status !== 200) return this.$message.error('获取商品信息失败')
       this.goodInfo = res.data
-      console.log(this.goodInfo)
       await this.getCateList()
       this.initialEditForm()
       this.initialTabData()

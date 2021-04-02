@@ -16,6 +16,9 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
+//导入nprogress
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false
 
@@ -23,9 +26,17 @@ Vue.config.productionTip = false
 axios.defaults.baseURL = 'http://www.ysqorz.top:8888/api/private/v1/'
 //请求拦截添加请求头token
 axios.interceptors.request.use(config => {
+  //在请求时立刻展示进度条
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
 })
+axios.interceptors.response.use(config => {
+  //在得到响应时立刻消失进度条
+  NProgress.done()
+  return config
+})
+
 //以Vue原型的形式挂载axios
 Vue.prototype.$http = axios
 
