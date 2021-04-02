@@ -1,5 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 路由懒加载
+const Login = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/login')
+const Home = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/home')
+const Welcome = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/welcome')
+
+const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/user/users')
+const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/right/rights')
+const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/right/roles')
+
+const Cate = () => import(/* webpackChunkName: "Cate_Params" */ '../components/good/categories')
+const Params = () => import(/* webpackChunkName: "Cate_Params" */ '../components/good/params')
+
+const Goods = () => import(/* webpackChunkName: "Goods_Add_Edit" */ '../components/good/goods')
+const AddGood = () => import(/* webpackChunkName: "Goods_Add_Edit" */ '../components/good/add')
+const EditGood = () => import(/* webpackChunkName: "Goods_Add_Edit" */ '../components/good/edit')
+
+const Order = () => import(/* webpackChunkName: "Order_Report" */ '../components/order/orders')
+const Report = () => import(/* webpackChunkName: "Order_Report" */ '../components/report/reports')
 
 Vue.use(VueRouter)
 
@@ -10,26 +28,26 @@ const routes = [
   },
   {
     path: '/login',
-    component: () => import('../components/login')
+    component: Login
   },
   {
     path: '/home',
-    component: () => import('../components/home'),
+    component: Home,
     redirect: '/welcome',
     children: [
         //本来子路由是前面不加/的，加了斜杠会被拼接到根，而不是从父路由开始，这里是因为服务器接口需要这样做，路由就是这样子
         //但是又不能绕过/home路由
-      { path: '/welcome', component: () => import('../components/welcome') },
-      { path: "/users", component: () => import('../components/user/users') },
-      { path: "/rights", component: () => import('../components/right/rights') },
-      { path: "/roles", component: () => import('../components/right/roles') },
-      { path: "/goods", component: () => import('../components/good/goods') },
-      { path: "/params", component: () => import('../components/good/params') },
-      { path: "/categories", component: () => import('../components/good/categories') },
-      { path: "/orders", component: () => import('../components/order/orders') },
-      { path: "/reports", component: () => import('../components/report/reports') },
-      { path: '/goods/addgood', component: () => import('../components/good/add') },
-      { path: '/goods/editgood', component: () => import('../components/good/edit') }
+      { path: '/welcome', component: Welcome },
+      { path: "/users", component: Users },
+      { path: "/rights", component: Rights },
+      { path: "/roles", component: Roles },
+      { path: "/goods", component: Goods },
+      { path: "/params", component: Params },
+      { path: "/categories", component: Cate },
+      { path: "/orders", component: Order },
+      { path: "/reports", component: Report },
+      { path: '/goods/addgood', component: AddGood },
+      { path: '/goods/editgood', component: EditGood }
     ]
   }
 ]
